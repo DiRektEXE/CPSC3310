@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 MIN_CELSIUS = 0
 MAX_CELSIUS = 50
 
