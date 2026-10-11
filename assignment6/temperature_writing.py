@@ -35,12 +35,13 @@ def get_celsius():
 def write_temperature_file_forloop(celsius):
     #TODO - complete this function to reproduce what below write_temperature_file_whileloop does
     # but using a for-loop
-    
-
-    for i in range(0,celsius):
-        print()
-
-    pass
+    with open(FORLOOP_FILE, 'w') as outfile:
+        outfile.write(f'{"Celsius":>8}\t\t{"Fahrenheit":>8}\n')
+        outfile.write("------------------------------------\n")
+        for i in range(0, celsius + 1):
+             # Calculate C to F
+            fahrenheit = (i * 1.8) + 32
+            outfile.write(f"{i:>8}\t\t{fahrenheit:>8.2f}\n")
 
 
 def write_temperature_file_whileloop(celsius):
