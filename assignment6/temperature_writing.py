@@ -23,6 +23,7 @@ def get_celsius():
     temperature = -1
 
     while temperature < MIN_CELSIUS or temperature > MAX_CELSIUS:
+        print("Invalid celsius value. Please enter an integer value ranging 0-50.")
         temperature = int(input("Enter a celsius value from 0-50: "))
 
     if temperature >= MIN_CELSIUS and temperature <= MAX_CELSIUS:
