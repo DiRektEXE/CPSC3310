@@ -18,14 +18,15 @@ def main():
 
 def get_celsius():
     #TODO - get the user's input celsius value (0-50) and validate it until a good value received
+    
+    # Initialize the temperature variable so that we can enter the WHILE loop
+    temperature = -1
 
     while temperature < MIN_CELSIUS or temperature > MAX_CELSIUS:
         temperature = int(input("Enter a celsius value from 0-50: "))
 
     if temperature >= MIN_CELSIUS and temperature <= MAX_CELSIUS:
-            print("Converting from Celsius to Fahrenheit...")
-            temperature = (temperature * (9.0/5.0)) + (32.0)
-            print(f"Temperature has been returned as {(temperature * (9.0/5.0)) + (32.0)}")
+        print("Captured celsius value input.")
 
     return temperature
     #pass
@@ -33,6 +34,11 @@ def get_celsius():
 def write_temperature_file_forloop(celsius):
     #TODO - complete this function to reproduce what below write_temperature_file_whileloop does
     # but using a for-loop
+    
+
+    for i in range(0,celsius):
+        print()
+
     pass
 
 
