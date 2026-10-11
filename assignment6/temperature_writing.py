@@ -22,15 +22,15 @@ def get_celsius():
     # Initialize the temperature variable so that we can enter the WHILE loop
     temperature = -1
 
-    while temperature < MIN_CELSIUS or temperature > MAX_CELSIUS:
-        print("Invalid celsius value. Please enter an integer value ranging 0-50.")
-        temperature = int(input("Enter a celsius value from 0-50: "))
+    while (temperature:= int(input("Enter a celsius value from 0-50: "))) < MIN_CELSIUS or temperature > MAX_CELSIUS:    
+        print("Invalid celsius value. Please enter an integer value ranging 0-50.")        
 
+    # I could remove the IF statement for simplicity
     if temperature >= MIN_CELSIUS and temperature <= MAX_CELSIUS:
         print("Captured celsius value input.")
 
     return temperature
-    #pass
+    
 
 def write_temperature_file_forloop(celsius):
     #TODO - complete this function to reproduce what below write_temperature_file_whileloop does
