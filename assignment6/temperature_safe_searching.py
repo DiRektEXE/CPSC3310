@@ -26,13 +26,20 @@ def get_celsius():
     good_value_received = False
     while not good_value_received:
         celsius_text = input(f"Enter a celsius degree ({MIN_CELSIUS}-{MAX_CELSIUS}): ")
-        # TODO - add try/except for the below section of code to catch ValueError
-        celsius = int(celsius_text)
-        if celsius < MIN_CELSIUS or celsius > MAX_CELSIUS:
-            print(f"Invalid input. Please enter a temperature between {MIN_CELSIUS} and {MAX_CELSIUS}.")
-        else:
-            good_value_received = True
-         #TODO - end here
+
+        # Attempt to cast to an integer        
+        try:
+            celsius = int(celsius_text)
+
+            # Is this value within range?
+            if (celsius < MIN_CELSIUS or celsius > MAX_CELSIUS):
+                print(f"Value out of range. Please enter a value {MIN_CELSIUS}-{MAX_CELSIUS}.")
+            else:
+                good_value_received = True
+
+        except ValueError:
+            print("Can't convert to integer.")       
+        
 
     return celsius
 
