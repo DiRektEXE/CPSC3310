@@ -63,7 +63,7 @@ def find_match_whileloop(celsius):
         # Keep searching the file until we arrive at an empty string (end of file)
         while line != "":
 
-            # Seperate the celsius and fahrenheit values with TAB characters near them
+            # Separate the celsius and fahrenheit values with TAB characters near them
             # Use tuple unpacking to assign the first value to degree_text and the second value to fahrenheit_text
             degree_text, fahrenheit_text = line.split("\t\t")
 
@@ -86,8 +86,24 @@ def skip_header(infile):
     infile.readline()  # skip the dashed separator line
 
 def append_record(celsius, fahrenheit):
-    #TODO - append a new record to the existing file
-    pass
+    #TODO - append a new record to the existing file    
+    another = 'y'
+
+    with open(TEMPERATURE_FILE, 'a') as output_file:
+
+        # Add records to the file.
+        while another == 'y' or another == 'Y':
+            print('Enter some data:')
+            celsius = get_celsius()
+
+            output_file.write(f"{celsius}\t\t{fahrenheit:.2f}\n")
+
+            # Ask the user if they want to append more data.
+            print("Would you like to append more data?")
+            another = input("Y = yes, anything else = no: ")
+
+    print(f"Data has been appended to {TEMPERATURE_FILE}")
+    
 
 
 if __name__ == "__main__":
