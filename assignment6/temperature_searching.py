@@ -26,7 +26,17 @@ def main():
 
 def get_celsius():
     #TODO - enforce the user to enter a good celsius temperature between (0-50)
-    pass
+    # Initialize the temperature variable so that we can enter the WHILE loop
+    celsius_value = -1
+    
+    while (celsius_value:= int(input("Enter a celsius value from 0-50: "))) < MIN_CELSIUS or celsius_value > MAX_CELSIUS:    
+        print("Invalid celsius value. Please enter an integer value ranging 0-50.")        
+    
+        # I could remove the IF statement for simplicity
+    if celsius_value >= MIN_CELSIUS and celsius_value <= MAX_CELSIUS:
+        print("Captured celsius value input.")
+    
+    return celsius_value
 
 
 def find_match_forloop(celsius):
@@ -45,7 +55,30 @@ def find_match_forloop(celsius):
 
 def find_match_whileloop(celsius):
     #TODO - construct a while-loop to complete what the above find_match_forloop() does.
-    pass
+    fahrenheit = None
+    with open(TEMPERATURE_FILE, 'r') as infile:
+        skip_header(infile)
+        line = infile.readline()
+
+        # Keep searching the file until we arrive at an empty string (end of file)
+        while line != "":
+
+            # Seperate the celsius and fahrenheit values with TAB characters near them
+            # Use tuple unpacking to assign the first value to degree_text and the second value to fahrenheit_text
+            degree_text, fahrenheit_text = line.split("\t\t")
+
+            # Is the first value equal to the target?
+            if int(degree_text) == celsius:
+
+                # If so, store the corresponding fahrenheit value
+                fahrenheit = float(fahrenheit_text)
+
+            # If the target value wasn't found, read the next line
+            line = infile.readline()
+
+    return fahrenheit       
+
+
 
 # this function is to remove the header and dashline. If you have different header format, ensure to remove them all
 def skip_header(infile):
