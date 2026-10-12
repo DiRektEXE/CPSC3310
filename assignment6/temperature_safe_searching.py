@@ -61,7 +61,6 @@ def find_match_forloop(celsius):
         print("This file cannot be found.")    
 
     return fahrenheit
-
     
 
 def skip_header(infile):
