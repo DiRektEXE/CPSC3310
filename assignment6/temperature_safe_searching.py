@@ -46,22 +46,24 @@ def get_celsius():
 
 def find_match_forloop(celsius):
     # Add try/except statement to catch FileNotFoundError
-
+    
     fahrenheit = None
-    try:
+    try:        
         with open(TEMPERATURE_FILE,"r") as infile:
             skip_header(infile)
             for line in infile:
                 degree_text, fahrenheit_text = line.split("\t\t")
                 if int(degree_text) == celsius:
                     fahrenheit = float(fahrenheit_text)
+                    break    
 
     except FileNotFoundError:
         print("This file cannot be found.")
 
-
+    
     return fahrenheit
 
+    
 
 def skip_header(infile):
     infile.readline()  # skip the header line
@@ -70,8 +72,13 @@ def skip_header(infile):
 # OSError is required for 'appending' mode in case 
 # the file is not granted with writing permission
 def append_record(celsius, fahrenheit):
+    file_missing = not TEMPERATURE_FILE.exists()
+    
     try:
         with open(TEMPERATURE_FILE, "a") as outfile:
+            if file_missing:
+                outfile.write(" Celsius\t\tFahrenheit\n")
+                outfile.write("------------------------------------\n")            
             outfile.write(f"{celsius:>8}\t\t{fahrenheit:>8.2f}\n")
     except OSError as error: 
         print(f"Could not write to the data file: {error}")
