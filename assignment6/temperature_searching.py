@@ -79,7 +79,6 @@ def find_match_whileloop(celsius):
     return fahrenheit       
 
 
-
 # this function is to remove the header and dashline. If you have different header format, ensure to remove them all
 def skip_header(infile):
     infile.readline()  # skip the header line
