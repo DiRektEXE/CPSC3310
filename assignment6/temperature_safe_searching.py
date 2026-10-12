@@ -45,8 +45,22 @@ def get_celsius():
 
 
 def find_match_forloop(celsius):
-    # TODO - add try/except statement to catch FileNotFoundError
-    pass
+    # Add try/except statement to catch FileNotFoundError
+
+    fahrenheit = None
+    try:
+        with open(TEMPERATURE_FILE,"r") as infile:
+            skip_header(infile)
+            for line in infile:
+                degree_text, fahrenheit_text = line.split("\t\t")
+                if int(degree_text) == celsius:
+                    fahrenheit = float(fahrenheit_text)
+
+    except FileNotFoundError:
+        print("This file cannot be found.")
+
+
+    return fahrenheit
 
 
 def skip_header(infile):
