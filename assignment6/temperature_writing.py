@@ -1,3 +1,5 @@
+# Vajaran Nall
+
 from pathlib import Path
 
 MIN_CELSIUS = 0
@@ -33,7 +35,6 @@ def get_celsius():
     
 
 def write_temperature_file_forloop(celsius):
-    #TODO - complete this function to reproduce what below write_temperature_file_whileloop does
     # but using a for-loop
     with open(FORLOOP_FILE, 'w') as outfile:
         outfile.write(f'{"Celsius":>8}\t\t{"Fahrenheit":>8}\n')

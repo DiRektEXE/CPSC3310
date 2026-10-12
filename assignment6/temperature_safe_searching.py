@@ -1,3 +1,5 @@
+# Vajaran Nall
+
 from pathlib import Path
 
 MIN_CELSIUS = 0
