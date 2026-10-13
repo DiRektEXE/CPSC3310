@@ -13,7 +13,7 @@ def investment_revenue():
             years = int(input("How many years to invest? "))            
             
             if investment_amount > 0 and interest_rate > 0 and years > 0:
-                print(f"You are investing ${investment_amount:.2f} at an interest rate of {interest_rate:.2f} for {years} years.")
+                print(f"You are investing ${investment_amount:.2f} at an interest rate of {interest_rate:.2f}% for {years} years.")
 
             if investment_amount <= 0:
                 print("Error: Investment must be a positive number.")           
