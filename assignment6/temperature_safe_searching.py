@@ -19,7 +19,7 @@ def main():
     else:
         fahrenheit = (celsius * 1.8) + 32
         append_record(celsius, fahrenheit)
-        print(f"No match found. New record added: {celsius} Celsius = {fahrenheit:.2f} Fahrenheit.")
+        print(f"No match found.\nNew record added: {celsius} Celsius = {fahrenheit:.2f} Fahrenheit.")
 
 
 def get_celsius():
