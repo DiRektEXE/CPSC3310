@@ -25,7 +25,11 @@ def read_precipitation_file(filename):
             # read the lines from file and get month and precipitation respectively from each line using tuple unpacking
             # add the readings to two lists respectively
             for line in input_file:
-                months, precipitation = line.strip().split(",")
+                month, precipitation_amount = line.strip().split(",")
+
+                # Add to both lists
+                months.append(month)
+                precipitation.append(float(precipitation_amount))
 
             print("Data has been read successfully\n")
 
@@ -45,7 +49,8 @@ def show_bar_chart(months, precipitation):
     short_names = [month[:3] for month in months]
 
     # Use MatPlotLib to draw the bar chart as you learned from the lecture
-
+    plt.plot(precipitation, short_names)
+    plt.show()
 
 # Call the main function only if this file is run directly.
 if __name__ == '__main__':
