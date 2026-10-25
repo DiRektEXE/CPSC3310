@@ -19,7 +19,7 @@ def main():
 
     # Use the repetition operator to initialize the precipitation list with 0.0 for each month.
     # TODO - initialize the precipitation list using repetition operator to store values for 12 months
-    precipitation = 4 
+    precipitation = [0.0]*12
 
     # Loop through the months and prompt the user for each month's precipitation.
     for i in range(len(months)):
@@ -38,14 +38,37 @@ TODO - prompt the user to enter precipitation for the given month. Validate the 
 """
 def get_precipitation(month):
     # write your code here, and remove pass
-    pass
+    while True:
+        try:
+
+            while (value := float(input("Enter a precipitation value for the current month: "))) < MIN_PRECIPITATION or value > MAX_PRECIPITATION:
+                print("Value out of range. Please try again.")     
+
+            return value
+
+        except ValueError:
+            print("Value out of range. Please try again.")
+    
+    
 
 """
 TODO - use list functions and methods to calculate annual precipitation total, average monthly precipitation, the highest 
        preciptiation and month, and the lowest precipitation and month
 """
 def analyze_precipitation(precipitation, months):
-   #write your code here and then remove pass
+    # Write your code here and then remove pass
+   
+    # Find the year total precipitation by grabbing each month's precipitation value with an accumulator variable.
+
+
+
+    # Find the monthly average
+
+    # Find lowest value and month
+
+    # Find highest value and month
+
+   
    pass
 
 
