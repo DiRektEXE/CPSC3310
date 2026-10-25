@@ -24,7 +24,12 @@ def read_precipitation_file(filename):
         with open(path, 'r') as input_file:
             # read the lines from file and get month and precipitation respectively from each line using tuple unpacking
             # add the readings to two lists respectively
-            pass
+            for line in input_file:
+                months, precipitation = line.strip().split(",")
+
+            print("Data has been read successfully\n")
+
+            
     except FileNotFoundError:
         print(f"Could not find '{filename}'. Run precipitation_analysis.py first.")
     except ValueError:
