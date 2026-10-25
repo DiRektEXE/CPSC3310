@@ -49,7 +49,10 @@ def show_bar_chart(months, precipitation):
     short_names = [month[:3] for month in months]
 
     # Use MatPlotLib to draw the bar chart as you learned from the lecture
-    plt.plot(precipitation, short_names)
+    plt.bar(precipitation, short_names)
+    plt.title("Annual Precipitation")
+    plt.xlabel("Precipitation")
+    plt.ylabel("Month")
     plt.show()
 
 # Call the main function only if this file is run directly.
