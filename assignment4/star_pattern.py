@@ -2,16 +2,16 @@
 
 # Vajaran Nall
 
-#def generate():
+def generate():
 
- #   rows = int(input("Enter an integer value: "))
-#    for i in range(rows, 0 ,-1):
-   #         for j in range(1, i + 1):
-    #              print("* ", end="")
-    #        print()
+    rows = int(input("Enter an integer value: "))
+    for i in range(rows, 0 ,-1):
+            for j in range(1, i + 1):
+                  print("* ", end="")
+            print()
 
-#if __name__ == "__main__":
-#    generate()
+if __name__ == "__main__":
+    generate()
 
 for x in range(1, 6):
     if x == 3:
