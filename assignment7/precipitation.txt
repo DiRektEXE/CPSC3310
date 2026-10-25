@@ -1,12 +1,12 @@
-January : 12.0 Inches
-February : 1.0 Inches
-March : 9.0 Inches
-April : 8.0 Inches
-May : 7.0 Inches
-June : 6.0 Inches
-July : 5.0 Inches
-August : 4.0 Inches
-September : 3.0 Inches
-October : 2.0 Inches
-November : 1.0 Inches
-December : 12.0 Inches
+January,12.0
+February,11.0
+March,10.0
+April,9.0
+May,8.0
+June,7.0
+July,6.0
+August,5.0
+September,4.0
+October,3.0
+November,2.0
+December,1.0

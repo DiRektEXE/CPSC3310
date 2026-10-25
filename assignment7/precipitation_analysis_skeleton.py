@@ -92,7 +92,7 @@ def write_precipitation_file(months, precipitation, filename=OUTPUT_FILE):
         with open(path, 'w') as output_file:
             # add your code here
             for month, p_value in zip(months, precipitation):
-                output_file.write(f"{month} : {p_value} Inches\n")
+                output_file.write(f"{month},{p_value}\n")
 
 
     except OSError as error:
