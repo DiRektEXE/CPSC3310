@@ -1,3 +1,5 @@
+# Vajaran Nall
+
 from pathlib import Path
 
 GRADES_FILE = Path(__file__).resolve().parent /"grades.csv"
