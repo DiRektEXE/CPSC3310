@@ -1,3 +1,5 @@
+# Vajaran Nall
+
 """calculate the student's grade based on the scores from the input and
 the predefined weights for each category"""
 
@@ -43,5 +45,5 @@ def calculate_grade():
     # Print the final grade with a floating point precision of 2 
     print(f"The students final grade is {final_grade:.2%}")
 
-    if __name__ == "__main__":
-        calculate_grade()
+if __name__ == "__main__":
+    calculate_grade()
