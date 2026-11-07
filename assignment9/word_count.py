@@ -1,7 +1,10 @@
 # Vajaran Nall
 
+# Ask user for filename
+filename = input("Enter the name of an input file: ")
+
 # Open the file for reading
-with open("text.txt", "r") as file:
+with open(filename, "r") as file:
     contents = file.read()
     words = contents.split()
 
