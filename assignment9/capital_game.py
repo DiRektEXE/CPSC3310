@@ -20,7 +20,7 @@ correct_answers = 0
 incorrect_answers = 0
 while True:
     random_state = random.choice(states)
-    answer = input(f"What is the capital of {random_state} (Or enter 0 to exit)? ")
+    answer = input(f"What is the capital of {random_state} (or enter 0 to exit)? ")
 
     # Check this condition first
     if answer == "0":
