@@ -18,8 +18,8 @@ def main():
     #        matching function below until the user quits, saving after
     #        add/change/delete.
 
-    # Create empty dictionary.
-    emails = {}
+    # Load the saved email dictionary.
+    emails = load_emails()
 
     # Initialize choice variable
     choice = 0
@@ -48,10 +48,13 @@ def load_emails():
     """Load and return the saved emails dictionary (or an empty one)."""
     # TODO - Unpickle FILENAME; return an empty dict if it doesn't exist
     #        or is empty.
-    with open(FILENAME, "rb") as file:
-        print()
+    try:
+        with open(FILENAME, "rb") as file:
+            return pickle.load(file)
+        
+    except (FileNotFoundError, EOFError):
+        return {}
 
-    pass
 
 
 def get_user_choice():
@@ -129,6 +132,9 @@ def delete(emails):
 def save_emails(emails):
     """Pickle the emails dictionary to FILENAME."""
     # TODO - Implement this function.
+    with open(FILENAME, "wb") as output_file:
+        pickle.dump(emails, output_file)
+
     pass
 
 
