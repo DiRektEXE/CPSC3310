@@ -14,9 +14,7 @@ FILENAME = os.path.join(SCRIPT_DIR, 'email.dat')
 
 def main():
     """Load the emails, run the menu loop, and save after each change."""
-    # TODO - Load emails, then loop reading a choice and calling the
-    #        matching function below until the user quits, saving after
-    #        add/change/delete.
+
 
     # Load the saved email dictionary.
     emails = load_emails()
@@ -35,19 +33,23 @@ def main():
 
         elif choice == ADD:
             add(emails)
+            save_emails(emails)
 
         elif choice == CHANGE:
             change(emails)
+            save_emails(emails)
 
         elif choice == DELETE:
             delete(emails)
+            save_emails(emails)
+
+    # Save any changes made to the dictionary
+    # save_emails(emails)
 
 
 
-def load_emails():
-    """Load and return the saved emails dictionary (or an empty one)."""
-    # TODO - Unpickle FILENAME; return an empty dict if it doesn't exist
-    #        or is empty.
+def load_emails():    
+    
     try:
         with open(FILENAME, "rb") as file:
             return pickle.load(file)
@@ -58,11 +60,9 @@ def load_emails():
 
 
 def get_user_choice():
-    """Display the menu and return a validated choice."""
-    # TODO - Print the menu, read a choice, and keep re-prompting until
-    #        it's a valid menu option.
+    
     print()
-    print("Name | Email Address Map")
+    print("Menu")
     print("------------------------")
     print("1. Look up an email")
     print("2. Add an email")
@@ -81,18 +81,19 @@ def get_user_choice():
 
 
 def look_up(emails):
-    """Print the email address for a name the user enters, if found."""
+    # Print the email address for a name the user enters, if found.
     name = input("Enter a name: ")
     print(emails.get(name, "Not Found.")) # This is print(emails[name]) with error handling
 
 
 
 def add(emails):
-    """Add a new name/address pair if the name isn't already present."""
+    # Add a new name/address pair if the name isn't already present.
     name = input("Enter a name: ")
-    email = input("Enter an email address: ")
+    
 
     if name not in emails:
+        email = input("Enter an email address: ")
         emails[name] = email
     else:
         print("This entry already exists.")
@@ -100,7 +101,7 @@ def add(emails):
 
 
 def change(emails):
-    """Update the address for an existing name."""
+    # Update the address for an existing name.
     name = input("Enter a name: ")
     if name in emails:
         email = input("Enter a new email address: ")
@@ -111,7 +112,29 @@ def change(emails):
 
 
 def delete(emails):
-    """Remove a name/address pair."""
+
+    name = input("Enter a name: ")
+    if name in emails:
+        del emails[name] #emails.pop(name)
+    else:
+        print("That name iis not found.")
+    
+
+
+def save_emails(emails):
+    """Pickle the emails dictionary to FILENAME."""
+    
+    with open(FILENAME, "wb") as output_file:
+        pickle.dump(emails, output_file)
+
+    
+
+
+if __name__ == '__main__':
+    main()
+
+
+
     # del dictionary[key] to delete entries
     # if a key isn't found, a KeyError exception is raised
     # Keys must be immutable
@@ -120,23 +143,3 @@ def delete(emails):
     # dictionary.items() returns all key/value pairs into a list where each element is a tuple
     # keys() returns all keys as a sequence
     # dict.pop(key, default_message) returns value related to key and removes the pair from the dict.
-
-    name = input("Enter a name: ")
-    if name in emails:
-        del emails[name] #emails.pop(name)
-    else:
-        print("That name iis not found.")
-    pass
-
-
-def save_emails(emails):
-    """Pickle the emails dictionary to FILENAME."""
-    # TODO - Implement this function.
-    with open(FILENAME, "wb") as output_file:
-        pickle.dump(emails, output_file)
-
-    pass
-
-
-if __name__ == '__main__':
-    main()
