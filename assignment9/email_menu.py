@@ -22,7 +22,8 @@ def main():
     # Initialize choice variable
     choice = 0
 
-    while choice != QUIT:
+    while choice != QUIT or type(choice) != int:
+        
 
         # Get user's menu choice
         choice = get_user_choice()
@@ -42,9 +43,6 @@ def main():
         elif choice == DELETE:
             delete(emails)
             save_emails(emails)
-
-    # Save any changes made to the dictionary
-    # save_emails(emails)
 
 
 
@@ -73,7 +71,7 @@ def get_user_choice():
 
     choice = int(input("Enter your choice: "))
 
-    while choice < 1 or choice > 5:
+    while choice < 1 or choice > 5 or type(choice) != int:
         choice = int(input("Enter a valid choice: "))
 
     return choice
@@ -83,7 +81,8 @@ def get_user_choice():
 def look_up(emails):
     # Print the email address for a name the user enters, if found.
     name = input("Enter a name: ")
-    print(emails.get(name, "Not Found.")) # This is print(emails[name]) with error handling
+    print()
+    print(f"\n{name}'s Email Address: {emails.get(name, "Not Found.")}") # This is print(emails[name]) with error handling
 
 
 
