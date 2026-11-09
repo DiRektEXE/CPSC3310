@@ -52,10 +52,13 @@ def load_emails():
         with open(FILENAME, "rb") as file:
             return pickle.load(file)
         
-    except (FileNotFoundError, EOFError):
+    except FileNotFoundError:
+        print("Emails file not found. Beginning with an empty dictionary.")
         return {}
 
-
+    except EOFError:
+        print("File is empty. Beginning with an empty dictionary.")
+        return{}
 
 def get_user_choice():
     
