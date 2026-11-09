@@ -1,3 +1,5 @@
+# Vajaran Nall
+
 import os
 import pickle
 
@@ -83,7 +85,7 @@ def get_user_choice():
 
 def look_up(emails):
     # Print the email address for a name the user enters, if found.
-    name = input("Enter a name: ")
+    name = input("Enter a name associated with an email: ")
     print()
     print(f"\n{name}'s Email Address: {emails.get(name, "Not Found.")}") # This is print(emails[name]) with error handling
 
@@ -91,6 +93,7 @@ def look_up(emails):
 
 def add(emails):
     # Add a new name/address pair if the name isn't already present.
+    print("Looks like you want to add an email.")
     name = input("Enter a name: ")
     
 
@@ -130,7 +133,6 @@ def save_emails(emails):
         pickle.dump(emails, output_file)
 
     
-
 
 if __name__ == '__main__':
     main()
