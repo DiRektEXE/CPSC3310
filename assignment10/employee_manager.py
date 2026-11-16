@@ -48,3 +48,28 @@ def delete_employee(employees):
         print("The employee has been deleted.")
     else:
         print("No employee found with that ID number.")
+
+def main():
+    employees = load_employees('employees.dat')
+
+    while True:
+        print("\nEmployee Management System")
+        print("1. Add a new employee")
+        print("2. Look up an employee by ID number")
+        print("3. Delete an employee by ID number")
+        print("4. Exit")
+
+        choice = input("Enter your choice (1-4): ")
+
+        if choice == '1':
+            add_employee(employees)
+        elif choice == '2':
+            lookup_employee(employees)
+        elif choice == '3':
+            delete_employee(employees)
+        elif choice == '4':
+            save_employees(employees, 'employees.dat')
+            print("Exiting the program. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please enter a number between 1 and 4.")
