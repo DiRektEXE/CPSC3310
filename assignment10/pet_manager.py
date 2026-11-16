@@ -1,5 +1,5 @@
 
-from .pet import Pet
+from pet import Pet
 
 # Get user input
 name = input("Enter the name of the pet: ")
@@ -11,5 +11,5 @@ my_pet = Pet(name, animal_type, age)
 
 # Display pet information
 print("Here is the data that you entered:")
-my_pet.print_info()
+print(my_pet)
 

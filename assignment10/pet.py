@@ -43,5 +43,5 @@ class Pet:
     # __str__
     def __str__(self):
         return (f"Pet Name: {self.__name}\n"
-                f"Type: {self.__pet_type}\n"
-                f"Age: {self.__age}")
+                f"Animal Type: {self.__pet_type}\n"
+                f"Age of Pet: {self.__age}")
