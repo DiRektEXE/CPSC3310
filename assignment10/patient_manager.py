@@ -52,7 +52,6 @@ def main():
 
     procedures = []
     print("\nAdd one or more procedures (enter 'n' to stop).")
-    
 
     while True:
         add_procedure = input("Would you like to add a procedure? (y/n): ").strip().lower()
@@ -61,6 +60,8 @@ def main():
             procedures.append(procedure)
         elif add_procedure == 'n':
             break
+        elif type(add_procedure) is not str:
+            print("Invalid input. Please enter a string 'y' or 'n'.")
         else:
             print("Invalid input. Please enter 'y' or 'n'.")
    
