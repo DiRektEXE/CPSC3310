@@ -31,6 +31,27 @@ def load_employees(filename):
     except FileNotFoundError:
         return {}
 
+def edit_employee(employees):
+    employee_id = input("Enter the ID number of the employee to edit: ")
+    employee = employees.get(employee_id)
+
+    if employee:
+        print("\nCurrent Employee Information:")
+        print(employee)
+
+        print("\nEnter new information (leave blank to keep current value):")
+        name = input(f"Name [{employee.get_name()}]: ") or employee.get_name()
+        department = input(f"Department [{employee.get_department()}]: ") or employee.get_department()
+        title = input(f"Title [{employee.get_title()}]: ") or employee.get_title()
+
+        employee.set_name(name)
+        employee.set_department(department)
+        employee.set_title(title)
+
+        print("The employee's information has been updated.")
+    else:
+        print("No employee found with that ID number.")
+
 def lookup_employee(employees):
     employee_id = input("Enter the ID number of the employee to look up: ")
     employee = employees.get(employee_id)
@@ -53,23 +74,30 @@ def main():
     employees = load_employees('employees.dat')
 
     while True:
-        print("\nEmployee Management System")
-        print("1. Add a new employee")
-        print("2. Look up an employee by ID number")
-        print("3. Delete an employee by ID number")
-        print("4. Exit")
+        print("\nMenu")
+        print("--------------------------------------------")
+        print("1. Look up an employee")
+        print("2. Add a new employee")
+        print("3. Change an existing employee's information")
+        print("4. Delete an employee")
+        print("5. Quit the program")
 
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-5): ")
 
         if choice == '1':
-            add_employee(employees)
-        elif choice == '2':
             lookup_employee(employees)
+        elif choice == '2':
+            add_employee(employees)
         elif choice == '3':
-            delete_employee(employees)
+            edit_employee(employees)
         elif choice == '4':
+            delete_employee(employees)
+        elif choice == '5':
             save_employees(employees, 'employees.dat')
             print("Exiting the program. Goodbye!")
             break
         else:
-            print("Invalid choice. Please enter a number between 1 and 4.")
+            print("Invalid choice. Please enter a number between 1 and 5.")
+
+if __name__ == "__main__":
+    main()
