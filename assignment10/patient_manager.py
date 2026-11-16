@@ -52,15 +52,27 @@ def main():
 
     procedures = []
     print("\nAdd one or more procedures (enter 'n' to stop).")
-    # TODO - create a loop to allow a user adding 0 to multiple procedures for the patient
-    #        use create_procedure() to instantiate each procedure object
-   
-    print("\nPatient and Procedure Information:")
-    # TODO - print the patient information, followed by all procedure information
-    #        Total the cost of all procedures and print the sum
-
     
 
+    while True:
+        add_procedure = input("Would you like to add a procedure? (y/n): ").strip().lower()
+        if add_procedure == 'y':
+            procedure = create_procedure()
+            procedures.append(procedure)
+        elif add_procedure == 'n':
+            break
+        else:
+            print("Invalid input. Please enter 'y' or 'n'.")
+   
+    print("\nPatient and Procedure Information:")
+    print(patient)
+    total_charge = 0.0
+    for procedure in procedures:
+        print()
+        print(procedure)
+        total_charge += procedure.get_charge()
+
+    print(f"\nTotal Charge: ${total_charge:.2f}")
 
 if __name__ == "__main__":
     main()
