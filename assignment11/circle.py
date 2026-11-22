@@ -18,4 +18,4 @@ class Circle(Shape):
 
     
     def __str__(self):
-        return f"Shape: Circle\nRadius: {self.__radius}\n\n"
+        return f"Shape: Circle\nRadius: {self.__radius}\nArea: {self.area():.2f}\n"
