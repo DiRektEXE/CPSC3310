@@ -7,16 +7,16 @@ class CommissionEmployee(Employee):
         self.__sales = sales
 
     def get_base_pay(self):
-        return self.__base_pay
+        return self.get_salary()
 
-    def get_commission_rate(self):
-        return self.__commission_rate
+    def get_commission(self):
+        return self.__commission_rate * self.__sales
 
     def get_sales(self):
         return self.__sales
 
     def calculate_pay(self):
-        return self.__base_pay + (self.__commission_rate * self.__sales)
+        return self.get_salary() + self.get_commission()
 
     def __str__(self):
-        return f"Commission Employee Name: {self.get_name()}, Base Pay: {self.__base_pay}, Commission Rate: {self.__commission_rate}, Sales: {self.__sales}, Department: {self.get_department()}"
+        return f"Commission Employee Name: {self.get_name()}, Base Pay: {self.get_salary()}, Commission: {self.get_commission()}, Sales: {self.__sales}"
