@@ -10,5 +10,5 @@ class HourlyEmployee(Employee):
         return self.__hourly_rate * self.__hours
 
     def __str__(self):
-        return f"Hourly Employee Name: {self.get_name()}, Hourly Rate: {self.__hourly_rate}, Hours Worked: {self.__hours}, Department: {self.get_department()}"
+        return f"Hourly Employee Name: {self.get_name()}, Hourly Rate: {self.__hourly_rate}, Hours Worked: {self.__hours}"
     

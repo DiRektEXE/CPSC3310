@@ -3,7 +3,6 @@ from employee import Employee
 class CommissionEmployee(Employee):
     def __init__(self, name, base_pay, commission_rate, sales):
         super().__init__(name, base_pay)
-        self.__base_pay = base_pay
         self.__commission_rate = commission_rate
         self.__sales = sales
 
