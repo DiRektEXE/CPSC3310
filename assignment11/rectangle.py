@@ -23,10 +23,8 @@ class Rectangle(Shape):
 
     # String representation of class data
     def __str__(self):
-        return f"Shape: Rectangle\nWidth: {self.width}\nHeight: {self.height}"
+        return f"Shape: Rectangle\nWidth: {self.width}\nHeight: {self.height}\n\n"
     
-    length = int(input("Enter a length value for the rectangle: "))
-    width = int(input("Enter a width value for the rectangle: "))
 
     def area(self):
         return self.__width * self.__height
