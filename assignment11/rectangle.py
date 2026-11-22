@@ -21,10 +21,9 @@ class Rectangle(Shape):
     def get_height(self):
             return self.__height
 
+    def area(self):
+            return self.__width * self.__height
+
     # String representation of class data
     def __str__(self):
-        return f"Shape: Rectangle\nWidth: {self.width}\nHeight: {self.height}\n\n"
-    
-
-    def area(self):
-        return self.__width * self.__height
+        return f"Shape: Rectangle\nWidth: {self.width}\nHeight: {self.height}\n\n"  
