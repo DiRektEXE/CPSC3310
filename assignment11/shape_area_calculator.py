@@ -5,9 +5,7 @@ from triangle import Triangle
 from square import Square
 
 def main():
-    # TODO: build a list holding a mix of superclass/subclass instances --
-    #       this is the "collection data structure" the Common Requirement
-    #       asks for.
+    
     shapes = [
         Circle("circle1", 3),
         Rectangle("rect1", 4, 5),
