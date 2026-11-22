@@ -1,9 +1,4 @@
-
-# Shape Superclass
-class Shape:
-
-    def area(self):
-        return 0
+from shape import Shape
 
 # Rectangle Subclass
 class Rectangle(Shape):
@@ -34,4 +29,4 @@ class Rectangle(Shape):
     width = int(input("Enter a width value for the rectangle: "))
 
     def area(self):
-        return 
+        return self.__width * self.__height
