@@ -3,3 +3,4 @@ from hourly_employee import HourlyEmployee
 from commission_employee import CommissionEmployee
 
 def main():
+    print()
