@@ -8,7 +8,7 @@ class Bird(Animal):
         self.__name = name
 
     def speak(self):
-        return "Chirp!"
+        return "Tweet!"
 
     def __str__(self):
         return f"Bird Name: {self.get_name()}"

@@ -21,27 +21,31 @@ def main():
             name = input("Enter the dog's name: ")
             animal = Dog(name)
             animals.append(animal)
+
         elif choice == "2":
             name = input("Enter the cat's name: ")
             animal = Cat(name)
             animals.append(animal)
+
         elif choice == "3":
             name = input("Enter the bird's name: ")
             animal = Bird(name)
             animals.append(animal)
+            
         elif choice == "4":
             print("Showing all pets...\n\n")
 
-            print("Your Pets:")
+            print("\nYour Pets:")
             for animal in animals:
-                print(f"{animal.name} the {animal.__class__.__name__} says {animal.speak()}")
+                print(f"{animal.get_name()} the {animal.__class__.__name__} says {animal.speak()}")
+            print()
 
         elif choice == "5":
             print("Exiting...")
             break
         else:
-            print("Invalid choice.")
-            break 
+            print("Invalid choice. Try again.\n\n")
+            
 
 if __name__ == "__main__":
     main()
