@@ -3,7 +3,8 @@ from shape import Shape
 # Rectangle Subclass
 class Rectangle(Shape):
 
-    def __init__(self, width, height):
+    def __init__(self, name, width, height):
+        super().__init__(name)
         self.__width = width
         self.__height = height
 

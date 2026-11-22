@@ -17,7 +17,7 @@ def main():
 
     print("Areas of various shapes:")
     for shape in shapes:  # polymorphism: each shape computes its own area
-        print(f"{shape.__class__.__name__} area: {shape.get_area():.2f}")
+        print(f"{shape.__class__.__name__} area: {shape.area():.2f}")
 
 
 if __name__ == "__main__":
