@@ -43,7 +43,7 @@ def main():
                 employee_type = "Employee"
 
             #print(employee)
-            print(f"\t{employee.get_name()}: ({employee_type}) ${employee.calculate_pay():.2f}")
+            print(f"\t{employee.get_name()} ({employee_type}): ${employee.calculate_pay():.2f}")
 
             if isinstance(employee, CommissionEmployee):
                 base_pay = employee.get_base_pay()
