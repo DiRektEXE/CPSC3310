@@ -24,7 +24,7 @@ def main():
             total_payroll += employee.calculate_pay()
             
             #print(employee)
-            print(f"\t{employee.get_name()} ({employee.__class__.__name__}): ${employee.calculate_pay():.2f}") 
+            print(f"\t{employee.get_name()}: ${employee.calculate_pay():.2f}") 
             print("-" * 30)
 
             if isinstance(employee, CommissionEmployee):
@@ -32,7 +32,7 @@ def main():
                 commission = employee.get_commission()
                 commission_percentage = (commission / employee.calculate_pay()) * 100
 
-                print(f"({commission_percentage:.1f}% of earnings)")
+                print(f"Base {base_pay:.2f} + Commission {commission:.2f} ({commission_percentage:.1f}% of earnings)")
         
         print(f"Total Payroll: ${total_payroll:.2f}")
 
