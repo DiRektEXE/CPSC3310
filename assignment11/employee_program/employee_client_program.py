@@ -30,6 +30,12 @@ def main():
                 base_pay = employee.get_base_pay()
                 commission = employee.get_commission()
                 commission_percentage = (commission / employee.calculate_pay()) * 100
+                total_pay = employee.calculate_pay()
+
+                if total_pay != 0:
+                    commission_percentage = (commission / total_pay) * 100
+                else:
+                    commission_percentage = 0
 
                 print(f"\t\tBase {base_pay:.2f} + Commission {commission:.2f} ({commission_percentage:.1f}% of earnings)")
         
