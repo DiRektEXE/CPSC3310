@@ -29,7 +29,6 @@ def main():
             if isinstance(employee, CommissionEmployee):
                 base_pay = employee.get_base_pay()
                 commission = employee.get_commission()
-                commission_percentage = (commission / employee.calculate_pay()) * 100
                 total_pay = employee.calculate_pay()
 
                 if total_pay != 0:
