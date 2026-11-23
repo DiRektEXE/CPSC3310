@@ -9,11 +9,13 @@ def main():
     departments = {
     "Engineering": [SalaryEmployee("Anthony Jo", 98000)],
     "HR": [SalaryEmployee("Emily Smith", 65000)],
-    "Software Engineering": [CommissionEmployee("Anthony Jo", 98000)]}
+    "Maintenance": [CommissionEmployee("Dominic Togo", 20000.00, 0.62, 45000.00)],
+    "Maintenance": [HourlyEmployee("Christina Gonzalez", 30000.00, 40)]}
 
-    total_payroll = 0
+    
 
     for department, employees in departments.items():
+        total_payroll = 0
         
         print(f"\nDepartment: {department}")
         
@@ -25,12 +27,12 @@ def main():
             print(f"\t{employee.get_name()} ({employee.__class__.__name__}): ${employee.calculate_pay():.2f}") 
             print("-" * 30)
 
-        if isinstance(employee, CommissionEmployee):
-            base_pay = employee.get_base_pay()
-            commission = employee.get_commission()
-            commission_percentage = (employee.get_commission() / employee.calculate_pay()) * 100
+            if isinstance(employee, CommissionEmployee):
+                base_pay = employee.get_base_pay()
+                commission = employee.get_commission()
+                commission_percentage = (commission / employee.calculate_pay()) * 100
 
-            print(f"({commission_percentage:.1f}% of earnings)")
+                print(f"({commission_percentage:.1f}% of earnings)")
         
         print(f"Total Payroll: ${total_payroll:.2f}")
 
