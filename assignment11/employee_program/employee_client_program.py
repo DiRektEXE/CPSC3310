@@ -9,10 +9,9 @@ def main():
     departments = {
     "Engineering": [SalaryEmployee("Anthony Jo", 98000)],
     "HR": [SalaryEmployee("Emily Smith", 65000)],
-    "Maintenance": [CommissionEmployee("Dominic Togo", 20000.00, 0.62, 45000.00), HourlyEmployee("Christina Gonzalez", 30000.00, 40)]
-}
-
-    
+    "Maintenance": [CommissionEmployee("Dominic Togo", 20000.00, 0.62, 45000.00), 
+                    HourlyEmployee("Christina Gonzalez", 30000.00, 40)]
+}    
 
     for department, employees in departments.items():
         total_payroll = 0
@@ -35,12 +34,6 @@ def main():
                 print(f"\t\tBase {base_pay:.2f} + Commission {commission:.2f} ({commission_percentage:.1f}% of earnings)")
         
         print(f"Total Payroll: ${total_payroll:.2f}")
-
-
-
-
-
-
 
 if __name__ == "__main__":
     main()
