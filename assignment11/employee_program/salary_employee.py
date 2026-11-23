@@ -5,7 +5,7 @@ class SalaryEmployee(Employee):
         super().__init__(name, annual_salary)
 
     def calculate_pay(self):
-        return self.get_salary()
+        return self.get_salary()  # Assuming salary is annual, return monthly pay
 
     def __str__(self):
         return f"Salary Employee Name: {self.get_name()}, Annual Salary: {self.get_salary()}"
