@@ -27,4 +27,4 @@ class Rectangle(Shape):
 
     # String representation of class data
     def __str__(self):
-        return f"Shape: Rectangle\nWidth: {self.width}\nHeight: {self.height}\n\n"  
+        return f"Shape: Rectangle\nWidth: {self.get_width()}\nHeight: {self.get_height()}\n\n"  

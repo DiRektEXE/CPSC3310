@@ -23,4 +23,4 @@ class Triangle(Shape):
         return (self.__base * self.__t_height) / 2
 
     def __str__(self):
-        return f"Shape: Triangle\n Base: {self.__base}\nHeight: {self.__height}\nArea: {self.area():.2f}\n\n"
+        return f"Shape: Triangle\n Base: {self.get_base()}\nHeight: {self.get_triangle_height()}\nArea: {self.area():.2f}\n\n"
